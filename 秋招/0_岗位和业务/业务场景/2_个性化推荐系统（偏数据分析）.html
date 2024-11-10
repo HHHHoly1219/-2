@@ -1,0 +1,168 @@
+<!DOCTYPE html> <html><head>
+		<title>2_个性化推荐系统（偏数据分析）</title>
+		<base href="../../../">
+		<meta id="root-path" root-path="../../../">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+		<meta charset="UTF-8">
+		<meta name="description" content="测试 - 2_个性化推荐系统（偏数据分析）">
+		<meta property="og:title" content="2_个性化推荐系统（偏数据分析）">
+		<meta property="og:description" content="测试 - 2_个性化推荐系统（偏数据分析）">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="秋招/0_岗位和业务/业务场景/2_个性化推荐系统（偏数据分析）.html">
+		<meta property="og:image" content="undefined">
+		<meta property="og:site_name" content="测试">
+		<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml"><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.png"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em;font-weight:600}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(let t=0;t<e.length;t++){let o=e[t],l=o.getAttribute("src");try{const e=await fetch(l);if(!e.ok){console.log("Could not include file: "+l),o?.remove();continue}let t=await e.text(),n=document.createRange().createContextualFragment(t),i=Array.from(n.children);for(let e of i)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);o.before(n),o.remove(),console.log("Included file: "+l)}catch(e){o?.remove(),console.log("Could not include file: "+l,e);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript></head><body class="publish css-settings-manager theme-light show-inline-title show-ribbon"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input" type="checkbox" id="theme_toggle"><div class="toggle-background"></div></label></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="search-input-container"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..."><div class="search-input-clear-button" aria-label="Clear search"></div></div><include src="lib/html/file-tree.html"></include></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading inline-title" id="2_个性化推荐系统（偏数据分析）">2_个性化推荐系统（偏数据分析）</h1><div class="el-p"><p dir="auto"><u>个性化推荐系统</u>是现代互联网应用中非常常见的一项技术，像TikTok、Netflix、亚马逊等平台都使用它来为用户推荐内容或商品。<u>它的目的是通过分析用户的行为数据，为每个用户提供定制化的体验。</u>以下是对这个系统每一步的详细解释，包括用到的软件和技术、数据处理过程、潜在问题及解决方法。</p></div><div class="el-hr"><hr></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><strong>数据收集</strong><br>
+<strong>描述</strong>：首先，我们需要从用户的行为中收集大量数据。这些数据可能包括：</p>
+<ul>
+<li data-line="3" dir="auto"><strong>显性数据</strong>：用户明确提供的信息，如用户的<u>个人资料、喜欢的内容、关注的人</u>等。</li>
+<li data-line="4" dir="auto"><strong>隐性数据</strong>：用户的行为数据，如<u>点击次数、浏览时长、搜索记录、点赞、分享和评论</u>等。</li>
+<li data-line="5" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong>产品数据</strong>：需要推荐的内容等等。
+<ol>
+<li data-line="6" dir="auto"><strong>商品属性的维度划分</strong>：商品通常包含多种属性，如类别（服装、电子产品）、品牌、价格、颜色等。根据这些属性维度，可以实现多样化的搜索和筛选功能。</li>
+<li data-line="7" dir="auto"><strong>支持机制</strong>：为用户提供筛选和排序功能，如根据价格区间筛选、按销量排序等。</li>
+</ol>
+</li>
+</ul>
+<p><strong>使用的软件和技术</strong>：</p>
+<ul>
+<li data-line="11" dir="auto"><strong>日志系统</strong>：如Apache Kafka，用于记录和传输用户的行为数据。</li>
+<li data-line="12" dir="auto"><strong>数据库</strong>：如MongoDB、<a data-href="数据库软件_MySQL" href="秋招/3_data相关/sql案例计算/数据库软件_mysql.html" class="internal-link" target="_self" rel="noopener nofollow">数据库软件_MySQL</a>，用于存储这些数据，以便后续分析。</li>
+</ul>
+<p><strong>如何处理数据</strong>：</p>
+<ul>
+<li data-line="16" dir="auto"><strong>实时收集</strong>：使用JavaScript代码或移动应用中的SDK（软件开发工具包）记录用户的每个操作，并将其发送到服务器存储。</li>
+<li data-line="17" dir="auto"><strong>数据清洗</strong>：处理重复数据、空值和错误数据，确保数据干净和有用。</li>
+</ul>
+<p><strong>可能出现的问题</strong>：</p>
+<ul>
+<li data-line="21" dir="auto"><strong>数据量过大</strong>：如果用户基数大，数据量会迅速膨胀，影响存储和计算效率。</li>
+<li data-line="22" dir="auto"><strong>数据不完整</strong>：一些用户可能会中断操作，导致数据记录不完整。</li>
+</ul>
+<p><strong>解决方法</strong>：</p>
+<ul>
+<li data-line="26" dir="auto"><strong>数据压缩和存档</strong>：定期压缩历史数据，并将不常用的数据归档到廉价存储中。</li>
+<li data-line="27" dir="auto"><strong>数据清洗和补全</strong>：使用<u>算法</u>预测缺失数据，或通过<u>数据清洗工具</u>（如Python的<a data-href="Pandas" href="秋招/3_data相关/pandas库_数据清洗/pandas.html" class="internal-link" target="_self" rel="noopener nofollow">Pandas</a>）去除不完整的数据。</li>
+</ul>
+</li>
+<li data-line="28" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><strong>数据存储<br>
+</strong>描述**：将收集到的所有数据结构化并存储，便于后续分析和模型训练。</p>
+<p><strong>使用的软件和技术</strong>：</p>
+<ul>
+<li data-line="33" dir="auto"><strong>分布式存储系统</strong>：如Amazon S3、Google Cloud Storage，用于大规模存储。</li>
+<li data-line="34" dir="auto"><strong>数据库管理系统</strong>：如PostgreSQL（适合结构化数据）和Elasticsearch（适合搜索和分析）。</li>
+</ul>
+<p><strong>如何处理数据</strong>：</p>
+<ul>
+<li data-line="38" dir="auto"><strong>索引和备份</strong>：为常用数据创建索引，以提高访问速度，并定期备份数据以防丢失。</li>
+</ul>
+<p><strong>可能出现的问题</strong>：</p>
+<ul>
+<li data-line="42" dir="auto"><strong>数据丢失</strong>：系统故障可能导致数据丢失，影响模型效果。</li>
+<li data-line="43" dir="auto"><strong>数据访问慢</strong>：随着数据增长，数据库查询速度可能变慢。</li>
+</ul>
+<p><strong>解决方法</strong>：</p>
+<ul>
+<li data-line="47" dir="auto"><strong>备份和灾难恢复</strong>：使用云存储提供的自动备份和灾难恢复功能，确保数据安全。</li>
+<li data-line="48" dir="auto"><strong>分片和负载均衡</strong>：将数据分片存储在多个服务器上，并使用负载均衡技术优化数据访问速度。</li>
+</ul>
+</li>
+<li data-line="49" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><strong>数据分析与特征提取</strong><br>
+<strong>描述</strong>：对用户行为数据进行分析，提取<mark>有用</mark>的特征，这些特征将用于训练推荐模型。例如，计算<u>用户的偏好、活跃时间、常看的视频类别</u>等。</p>
+<p><strong>使用的软件和技术</strong>：</p>
+<ul>
+<li data-line="54" dir="auto"><strong>数据分析工具</strong>：如Python的<a data-href="Pandas" href="秋招/3_data相关/pandas库_数据清洗/pandas.html" class="internal-link" target="_self" rel="noopener nofollow">Pandas</a>和NumPy，用于数据处理和特征提取。</li>
+<li data-line="55" dir="auto"><strong>机器学习框架</strong>：如Scikit-Learn、TensorFlow，用于训练模型。</li>
+</ul>
+<p><strong>如何处理数据</strong>：</p>
+<ul>
+<li data-line="59" dir="auto"><strong>特征工程</strong>：分析用户行为，提取有用的特征。例如，用户在某一类型视频上花费的时间，可以用来预测其兴趣。</li>
+<li data-line="60" dir="auto"><strong>数据聚合</strong>：将不同来源的数据整合在一起，形成用户的完整画像。</li>
+</ul>
+<p><strong>可能出现的问题</strong>：</p>
+<ul>
+<li data-line="64" dir="auto"><strong>特征冗余</strong>：有些特征可能对模型没有贡献，反而增加计算复杂度。</li>
+<li data-line="65" dir="auto"><strong>数据偏差</strong>：某些用户行为可能被过度强调，导致模型偏向这些特征。</li>
+</ul>
+<p><strong>解决方法</strong>：</p>
+<ul>
+<li data-line="69" dir="auto"><strong>特征选择</strong>：使用统计方法或机器学习算法（如主成分分析，PCA）去除无用特征。</li>
+<li data-line="70" dir="auto"><strong>数据均衡</strong>：对数据进行平衡处理，避免模型对某些特征产生偏见。</li>
+</ul>
+</li>
+<li data-line="71" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><strong>模型训练与优化</strong><br>
+<strong>描述</strong>：使用机器学习模型来学习用户的行为模式，并预测他们可能喜欢的内容。常用的模型包括<u>协同过滤、矩阵分解、深度学习模型</u>等。</p>
+<p><strong>使用的软件和技术</strong>：</p>
+<ul>
+<li data-line="76" dir="auto"><strong>机器学习框架</strong>：如TensorFlow、<a data-href="PyTorch等深度学习框架" href="秋招/4_技术相关/pytorch等深度学习框架.html" class="internal-link" target="_self" rel="noopener nofollow">PyTorch等深度学习框架</a>，用于构建和训练模型。</li>
+<li data-line="77" dir="auto"><strong>分布式计算框架</strong>：如Apache Spark，用于处理大规模<a data-href="✨ 数据集：含义、类型、标注方案、服务商" href="秋招/3_data相关/✨-数据集：含义、类型、标注方案、服务商.html" class="internal-link" target="_self" rel="noopener nofollow">✨ 数据集：含义、类型、标注方案、服务商</a>。</li>
+</ul>
+<p><strong>如何处理数据</strong>：</p>
+<ul>
+<li data-line="81" dir="auto"><strong>训练模型</strong>：用80%的数据训练模型，剩余20%用于验证和测试模型效果。</li>
+<li data-line="82" dir="auto"><strong>参数调优</strong>：通过调整模型参数（如学习率、正则化系数）提高模型准确性。</li>
+</ul>
+<p><strong>可能出现的问题</strong>：</p>
+<ul>
+<li data-line="86" dir="auto"><strong>过拟合</strong>：模型在训练数据上表现很好，但在新数据上表现不佳。</li>
+<li data-line="87" dir="auto"><strong>模型复杂度高</strong>：复杂模型可能需要大量计算资源，训练时间长。</li>
+</ul>
+<p><strong>解决方法</strong>：</p>
+<ul>
+<li data-line="91" dir="auto"><strong>正则化</strong>：在模型中加入正则化项，防止过拟合。</li>
+<li data-line="92" dir="auto"><strong>模型简化</strong>：选择更简单的模型，或使用分布式计算减少训练时间。</li>
+</ul>
+</li>
+<li data-line="93" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><strong>系统部署完成，开始实施推荐</strong><br>
+<strong>描述</strong>：将训练好的模型部署到实际应用中，为用户提供个性化推荐。系统会根据用户的实时行为调整推荐内容。</p>
+<p><strong>使用的软件和技术</strong>：</p>
+<ul>
+<li data-line="98" dir="auto"><strong>后端框架</strong>：如Django、Flask，用于构建推荐系统的API。</li>
+<li data-line="99" dir="auto"><strong>缓存技术</strong>：如Redis，用于存储和快速访问热门推荐内容。</li>
+<li data-line="100" dir="auto"><strong>CDN（内容分发网络）</strong>：加快用户访问速度。</li>
+</ul>
+<p><strong>如何处理数据</strong>：</p>
+<ul>
+<li data-line="104" dir="auto"><strong>实时更新</strong>：当用户行为发生变化时，系统会更新推荐列表。</li>
+<li data-line="105" dir="auto"><strong>缓存推荐结果</strong>：对高频用户使用缓存技术，减少服务器负载。</li>
+</ul>
+<p><strong>可能出现的问题</strong>：</p>
+<ul>
+<li data-line="109" dir="auto"><strong>冷启动问题</strong>：新用户由于没有历史数据，推荐系统难以提供精准推荐。</li>
+<li data-line="110" dir="auto"><strong>延迟问题</strong>：实时推荐系统可能因计算复杂而导致响应慢。</li>
+</ul>
+<p><strong>解决方法</strong>：</p>
+<ul>
+<li data-line="114" dir="auto"><strong>解决冷启动问题</strong>：使用基于用户属性的初始推荐，或者利用协同过滤中的“新用户冷启动”策略。或者使用热门内容进行推荐。</li>
+<li data-line="115" dir="auto"><strong>优化系统性能</strong>：使用缓存技术减少计算延迟，并优化代码和数据库查询。</li>
+</ul>
+</li>
+<li data-line="116" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><strong>反馈和优化</strong><br>
+<strong>流程步骤</strong>：</p>
+<ul>
+<li data-line="118" dir="auto"><strong>用户反馈收集</strong>：系统根据<u>用户的点击、停留时间、转化率</u>等数据，判断推荐的效果。<mark>用户的内容匹配度提高，观看时间和平台参与度上升。</mark></li>
+<li data-line="119" dir="auto"><strong>优化模型</strong>：根据用户反馈，调整模型参数，或选择新的算法，以提高推荐质量。</li>
+</ul>
+<p><strong>使用的技术和软件</strong>：</p>
+<ul>
+<li data-line="122" dir="auto"><strong>反馈收集工具</strong>：Google Analytics、Mixpanel，收集用户交互数据。</li>
+<li data-line="123" dir="auto"><strong>自动化模型优化工具</strong>：如TensorFlow的AutoML工具，可自动调优模型参数。</li>
+</ul>
+<p><strong>可能遇到的问题</strong>：</p>
+<ul>
+<li data-line="126" dir="auto"><strong>反馈不足</strong>：用户的实际反馈有限，难以直接衡量推荐质量。</li>
+<li data-line="127" dir="auto"><strong>解决方法</strong>：结合用户隐性行为（如停留时长、滚动速度）来间接评估推荐效果；使用A/B测试对推荐效果进行实验性验证。</li>
+</ul>
+</li>
+</ol></div><div class="el-hr"><hr></div><div class="el-h3 heading-wrapper"><h3 data-heading="总结" dir="auto" class="heading" id="总结"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>总结</h3><div class="heading-children"><div class="el-p"><p dir="auto">个性化推荐系统涉及从数据收集到模型部署的多个步骤，每一步都需要仔细设计和优化，以确保系统准确、高效和可靠。即使对非技术人员来说，这个流程也很容易理解：系统通过收集用户行为数据，分析这些数据并训练模型，最终为用户提供个性化内容。但每一步都有潜在的挑战，需要用合适的技术和策略去解决。</p></div><div class="mod-footer mod-ui"></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-scroll-area tree-item-children nav-folder-children"><div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div><div class="tree-item" data-depth="1"><a class="tree-link" href="秋招/0_岗位和业务/业务场景/2_个性化推荐系统（偏数据分析）.html#2_个性化推荐系统（偏数据分析）"><div class="tree-item-contents heading-link" heading-name="2_个性化推荐系统（偏数据分析）"><span class="tree-item-title">2_个性化推荐系统（偏数据分析）</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="3"><a class="tree-link" href="秋招/0_岗位和业务/业务场景/2_个性化推荐系统（偏数据分析）.html#总结"><div class="tree-item-contents heading-link" heading-name="总结"><span class="tree-item-title">总结</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>
