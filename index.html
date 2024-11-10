@@ -1,164 +1,141 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>网站导航</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Structure</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             display: flex;
             margin: 0;
-            height: 100vh;
+            padding: 0;
         }
-        .sidebar {
-            width: 300px;
-            padding: 15px;
+        #sidebar {
+            width: 250px;
             background-color: #f4f4f4;
+            padding: 15px;
             border-right: 1px solid #ddd;
-            height: 100vh;
             overflow-y: auto;
-            position: fixed;
-        }
-        .content {
-            margin-left: 320px;
-            flex-grow: 1;
             height: 100vh;
-            overflow: hidden;
         }
-        ul {
-            list-style-type: none;
-            padding-left: 20px;
-        }
-        li {
-            margin: 5px 0;
-            cursor: pointer;
-            user-select: none;
-        }
-        a {
-            text-decoration: none;
-            color: #0073e6;
-            display: inline-block;
-            padding: 3px 0;
+        #content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            height: 100vh;
         }
         .folder {
+            cursor: pointer;
             font-weight: bold;
-            display: flex;
-            align-items: center;
+            margin-top: 10px;
         }
-        .icon {
-            margin-right: 5px;
-            font-size: 12px;
-        }
-        .nested {
-            display: none;
-        }
-        .active {
+        .file {
+            cursor: pointer;
+            margin-left: 15px;
             display: block;
         }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+        .hidden {
+            display: none;
         }
     </style>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var folders = document.getElementsByClassName("folder");
-            for (var i = 0; i < folders.length; i++) {
-                folders[i].addEventListener("click", function() {
-                    var nestedList = this.nextElementSibling;
-                    if (nestedList.classList.contains("active")) {
-                        nestedList.classList.remove("active");
-                        this.querySelector(".icon").textContent = "▶";
-                    } else {
-                        nestedList.classList.add("active");
-                        this.querySelector(".icon").textContent = "▼";
-                    }
-                });
+        function toggleFolder(folder) {
+            const files = folder.nextElementSibling;
+            if (files.classList.contains("hidden")) {
+                files.classList.remove("hidden");
+                folder.textContent = "▼ " + folder.dataset.name;
+            } else {
+                files.classList.add("hidden");
+                folder.textContent = "▶ " + folder.dataset.name;
             }
-        });
+        }
+
+        function loadContent(file) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("content").innerHTML = data;
+                })
+                .catch(() => {
+                    document.getElementById("content").innerHTML = "Failed to load content.";
+                });
+        }
     </script>
 </head>
 <body>
-    <div class="sidebar">
-        <h3>文件夹导航</h3>
-        <ul>
-            <li class="folder"><span class="icon">▶</span>秋招</li>
-            <ul class="nested">
-                <li class="folder"><span class="icon">▶</span>0_岗位和业务</li>
-                <ul class="nested">
-                    <li class="folder"><span class="icon">▶</span>业务场景</li>
-                    <ul class="nested">
-                        <li><a href="0_ai模型的数据标注和训练（偏数据标注）.html" target="content-frame">0_ai模型的数据标注和训练</a></li>
-                        <li><a href="1_提升大语言模型写高语法生理性.html" target="content-frame">1_提升大语言模型写高语法生理性</a></li>
-                        <li><a href="2_个性推荐系统（偏数据分析）.html" target="content-frame">2_个性推荐系统</a></li>
-                        <li><a href="用户增长与营销策略（偏数据分析）.html" target="content-frame">用户增长与营销策略</a></li>
-                        <li><a href="code-ai.html" target="content-frame">code-ai</a></li>
-                        <li><a href="字节跳动_大模型数据策略产品经理.html" target="content-frame">字节跳动_大模型数据策略产品经理</a></li>
-                        <li><a href="岗位分析_大模型数据策略产品经理_chatgpt.html" target="content-frame">岗位分析_ChatGPT</a></li>
-                    </ul>
-                </li>
-                <li class="folder"><span class="icon">▶</span>1_面试题目</li>
-                <ul class="nested">
-                    <li class="folder"><span class="icon">▶</span>相关职位的面经</li>
-                    <ul class="nested">
-                        <li><a href="ai产品经理_牛客面经.html" target="content-frame">AI产品经理_牛客面经</a></li>
-                        <li><a href="其他产品经理面试问题.html" target="content-frame">其他产品经理面试问题</a></li>
-                        <li><a href="字节data-pm-面经.html" target="content-frame">字节Data PM 面经</a></li>
-                        <li><a href="数据产品经理面试问题_小红书整理.html" target="content-frame">数据产品经理面试问题</a></li>
-                        <li><a href="飞书ai大模型策略产品经理_字节实习面经.html" target="content-frame">飞书AI策略产品经理</a></li>
-                    </ul>
-                    <li class="folder"><span class="icon">▶</span>简历深挖</li>
-                    <ul class="nested">
-                        <li><a href="0_b站人工智能平台部的实习经历.html" target="content-frame">0_B站实习经历</a></li>
-                        <li><a href="1_chatgpt和midjourney的效果生成研究.html" target="content-frame">1_ChatGPT和Midjourney</a></li>
-                        <li><a href="中科君产品介绍.html" target="content-frame">中科君产品介绍</a></li>
-                        <li><a href="chatgpt的面试分析.html" target="content-frame">ChatGPT的面试分析</a></li>
-                        <li><a href="hr面试.html" target="content-frame">HR面试</a></li>
-                        <li><a href="反问环节.html" target="content-frame">反问环节</a></li>
-                        <li><a href="简历深挖.html" target="content-frame">简历深挖</a></li>
-                    </ul>
-                </li>
-                <li class="folder"><span class="icon">▶</span>2_产品相关</li>
-                <ul class="nested">
-                    <li><a href="sop“标准操作程序”（standard-operating-procedure）.html" target="content-frame">SOP“标准操作程序”</a></li>
-                    <li><a href="产品管理.html" target="content-frame">产品管理</a></li>
-                    <li><a href="怎么成为一名产品经理？（各种类型）.html" target="content-frame">怎么成为一名产品经理？</a></li>
-                    <li><a href="竞品分析.html" target="content-frame">竞品分析</a></li>
-                    <li><a href="策略经理.html" target="content-frame">策略经理</a></li>
-                    <li><a href="项目管理的原则.html" target="content-frame">项目管理的原则</a></li>
-                </ul>
-                <li class="folder"><span class="icon">▶</span>3_Data相关</li>
-                <ul class="nested">
-                    <li class="folder"><span class="icon">▶</span>pandas库_数据清洗</li>
-                    <ul class="nested">
-                        <li><a href="csv文件.html" target="content-frame">CSV文件</a></li>
-                        <li><a href="pandas.html" target="content-frame">Pandas</a></li>
-                    </ul>
-                    <li class="folder"><span class="icon">▶</span>sql案例计算</li>
-                    <ul class="nested">
-                        <li><a href="3小时学会-mysql.html" target="content-frame">3小时学会 MySQL</a></li>
-                        <li><a href="数据库优化-mysql.html" target="content-frame">数据库优化 MySQL</a></li>
-                        <li><a href="案例：用户留存率.html" target="content-frame">案例：用户留存率</a></li>
-                        <li><a href="✨数据集：含义、类型、标注方案、服务商.html" target="content-frame">✨数据集：含义、类型、标注方案</a></li>
-                        <li><a href="数据策略：含义与应用场景.html" target="content-frame">数据策略：含义与应用场景</a></li>
-                        <li><a href="看完还想转数据产品经理方向吗？.html" target="content-frame">看完还想转数据产品经理方向吗？</a></li>
-                        <li><a href="职位描述中提到的“数据”概念.html" target="content-frame">职位描述中的“数据”概念</a></li>
-                        <li><a href="ab测试概述.html" target="content-frame">AB测试概述</a></li>
-                    </ul>
-                </li>
-                <li class="folder"><span class="icon">▶</span>4_技术相关</li>
-                <ul class="nested">
-                    <li><a href="机器学习与算法（大语言模型）.html" target="content-frame">机器学习与算法</a></li>
-                    <li><a href="nlp书目（💡自然语言处理算法方法大全）.html" target="content-frame">NLP书目</a></li>
-                    <li><a href="nltk常见算法分类python库.html" target="content-frame">NLTK常见算法分类</a></li>
-                    <li><a href="pytoch常用学习框架整理.html" target="content-frame">PyTorch学习框架</a></li>
-                </ul>
-            </ul>
-        </ul>
+    <div id="sidebar">
+        <div class="folder" data-name="秋招" onclick="toggleFolder(this)">▶ 秋招</div>
+        <div class="hidden">
+            <div class="folder" data-name="0_岗位和业务" onclick="toggleFolder(this)">▶ 0_岗位和业务</div>
+            <div class="hidden">
+                <div class="folder" data-name="业务场景" onclick="toggleFolder(this)">▶ 业务场景</div>
+                <div class="hidden">
+                    <div class="file" onclick="loadContent('0_ai基础的数据标注和训练（偏数据标注走神经网络nlp文本处理）.html')">0_ai基础的数据标注和训练.html</div>
+                    <div class="file" onclick="loadContent('1_提升大语言模型产品经理思维.html')">1_提升大语言模型产品经理思维.html</div>
+                    <div class="file" onclick="loadContent('2_个性化推荐系统（偏竞品分析）.html')">2_个性化推荐系统.html</div>
+                    <div class="file" onclick="loadContent('3_用户增长与运营策略（偏策略方向）.html')">3_用户增长与运营策略.html</div>
+                    <div class="file" onclick="loadContent('code-ai.html')">code-ai.html</div>
+                </div>
+                <div class="file" onclick="loadContent('字节跳动大模型数据标注产品经理_ChatGPT.html')">字节跳动大模型数据标注产品经理_ChatGPT.html</div>
+                <div class="file" onclick="loadContent('附加题-某大模型数据标注产品经理_字节实习题目.html')">附加题-某大模型数据标注产品经理_字节实习题目.html</div>
+            </div>
+            <div class="folder" data-name="1_面试" onclick="toggleFolder(this)">▶ 1_面试</div>
+            <div class="hidden">
+                <div class="file" onclick="loadContent('ai产品经理-牛客真题.html')">ai产品经理-牛客真题.html</div>
+                <div class="file" onclick="loadContent('其他产品经理面试问题.html')">其他产品经理面试问题.html</div>
+                <div class="file" onclick="loadContent('字节data-pm-面试.html')">字节data-pm-面试.html</div>
+                <div class="file" onclick="loadContent('数据产品经理面试问题_小红书整理.html')">数据产品经理面试问题_小红书整理.html</div>
+                <div class="file" onclick="loadContent('飞书招聘数据产品经理_字节实习题目.html')">飞书招聘数据产品经理_字节实习题目.html</div>
+            </div>
+            <div class="folder" data-name="简历润色" onclick="toggleFolder(this)">▶ 简历润色</div>
+            <div class="hidden">
+                <div class="file" onclick="loadContent('0_站点人工智能平台目的实习经历总结.html')">0_站点人工智能平台目的实习经历总结.html</div>
+                <div class="file" onclick="loadContent('1_chatgpt和midjourney的教案生成研究.html')">1_chatgpt和midjourney的教案生成研究.html</div>
+                <div class="file" onclick="loadContent('中美教育介绍.html')">中美教育介绍.html</div>
+                <div class="file" onclick="loadContent('chatgpt的自我分析.html')">chatgpt的自我分析.html</div>
+                <div class="file" onclick="loadContent('hr面试.html')">hr面试.html</div>
+                <div class="file" onclick="loadContent('反向审计.html')">反向审计.html</div>
+                <div class="file" onclick="loadContent('简历润色.html')">简历润色.html</div>
+            </div>
+            <div class="folder" data-name="2_产品相关" onclick="toggleFolder(this)">▶ 2_产品相关</div>
+            <div class="hidden">
+                <div class="file" onclick="loadContent('sop标准操作程序（standard-operating-procedure）.html')">sop标准操作程序.html</div>
+                <div class="file" onclick="loadContent('产品管理.html')">产品管理.html</div>
+                <div class="file" onclick="loadContent('怎么成为一名产品经理（各种类型）.html')">怎么成为一名产品经理.html</div>
+                <div class="file" onclick="loadContent('竞品分析.html')">竞品分析.html</div>
+                <div class="file" onclick="loadContent('策略模型.html')">策略模型.html</div>
+                <div class="file" onclick="loadContent('项目管理原理.html')">项目管理原理.html</div>
+            </div>
+        </div>
+        <div class="folder" data-name="3_data相关" onclick="toggleFolder(this)">▶ 3_data相关</div>
+        <div class="hidden">
+            <div class="folder" data-name="pandas库-数据清洗" onclick="toggleFolder(this)">▶ pandas库-数据清洗</div>
+            <div class="hidden">
+                <div class="file" onclick="loadContent('csv文件.html')">csv文件.html</div>
+                <div class="file" onclick="loadContent('pandas基础.html')">pandas基础.html</div>
+            </div>
+            <div class="folder" data-name="sql数据库" onclick="toggleFolder(this)">▶ sql数据库</div>
+            <div class="hidden">
+                <div class="file" onclick="loadContent('3小时学会-mysql.html')">3小时学会-mysql.html</div>
+                <div class="file" onclick="loadContent('数据库优缺点_mysql.html')">数据库优缺点_mysql.html</div>
+                <div class="file" onclick="loadContent('案例：用户登录表.html')">案例：用户登录表.html</div>
+                <div class="file" onclick="loadContent('数据建模：含义、类型、标准、方法.html')">数据建模：含义、类型、标准、方法.html</div>
+                <div class="file" onclick="loadContent('数据建模：含义及应用场景、服务措施.html')">数据建模：含义及应用场景.html</div>
+                <div class="file" onclick="loadContent('取出抽样中间部分数据-亚马逊公司案例.html')">取出抽样中间部分数据-亚马逊公司案例.html</div>
+                <div class="file" onclick="loadContent('表_abi指数表述标准.html')">表_abi指数表述标准.html</div>
+            </div>
+        </div>
+        <div class="folder" data-name="4_技术相关" onclick="toggleFolder(this)">▶ 4_技术相关</div>
+        <div class="hidden">
+            <div class="file" onclick="loadContent('ai-需求、大语言模型、机器学习的流向.html')">ai-需求、大语言模型、机器学习的流向.html</div>
+            <div class="file" onclick="loadContent('nlp库百科-情感质量评估方法总集合.html')">nlp库百科-情感质量评估方法总集合.html</div>
+            <div class="file" onclick="loadContent('pytorch架构零基础课程.html')">pytorch架构零基础课程.html</div>
+        </div>
     </div>
-    <div class="content">
-        <iframe name="content-frame"></iframe>
+    <div id="content">
+        <!-- Content will be loaded here -->
+        <p>点击左侧文件加载内容。</p>
     </div>
 </body>
 </html>
